@@ -1,0 +1,147 @@
+/* 小鱼文案集 —— 纸感、克制、中文优先排版 */
+:root {
+  --paper: #faf8f3;
+  --ink: #1d1c1a;
+  --muted: #6f6a61;
+  --line: #e3ddd2;
+  --accent: #a63d2f;
+  --code-bg: #f0ebe2;
+  --max: 44rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #171614;
+    --ink: #e9e5de;
+    --muted: #a49d92;
+    --line: #322f2a;
+    --accent: #e08272;
+    --code-bg: #232120;
+  }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: -apple-system, "PingFang SC", "Microsoft YaHei", "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.9;
+  letter-spacing: 0.01em;
+}
+
+.wrap { max-width: var(--max); margin: 0 auto; padding: 0 1.25rem; }
+
+header.site {
+  border-bottom: 1px solid var(--line);
+  padding: 1.6rem 0 1.2rem;
+  margin-bottom: 2.5rem;
+}
+header.site .wrap { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.brand { font-size: 1.15rem; font-weight: 600; letter-spacing: 0.06em; text-decoration: none; color: var(--ink); }
+.brand span { color: var(--accent); }
+nav a { color: var(--muted); text-decoration: none; margin-left: 1.1rem; font-size: 0.92rem; }
+nav a:hover { color: var(--accent); }
+
+.hero { margin: 0 0 3rem; }
+.hero h1 {
+  font-family: "Songti SC", "Noto Serif SC", Georgia, serif;
+  font-size: 2rem;
+  line-height: 1.45;
+  margin: 0 0 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+.hero p { color: var(--muted); margin: 0; }
+
+.list { list-style: none; margin: 0; padding: 0; }
+.list li { border-top: 1px solid var(--line); padding: 1.5rem 0; }
+.list li:first-child { border-top: none; padding-top: 0; }
+
+.list time { color: var(--muted); font-size: 0.82rem; letter-spacing: 0.08em; }
+.list h2 { font-size: 1.18rem; margin: 0.35rem 0 0.4rem; font-weight: 600; line-height: 1.6; }
+.list h2 a { color: var(--ink); text-decoration: none; }
+.list h2 a:hover { color: var(--accent); }
+.list p { margin: 0; color: var(--muted); font-size: 0.95rem; }
+.tags { margin-top: 0.6rem; display: flex; gap: 0.5rem; flex-wrap: wrap; }
+.tag {
+  font-size: 0.75rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 0.05rem 0.6rem;
+  text-decoration: none;
+}
+
+article.post { padding-bottom: 2rem; }
+article.post h1 {
+  font-family: "Songti SC", "Noto Serif SC", Georgia, serif;
+  font-size: 1.85rem;
+  line-height: 1.5;
+  margin: 0 0 0.5rem;
+  font-weight: 600;
+}
+article.post .meta { color: var(--muted); font-size: 0.85rem; margin-bottom: 2.2rem; letter-spacing: 0.05em; }
+article.post h2 { font-size: 1.25rem; margin: 2.4rem 0 0.8rem; font-weight: 600; }
+article.post h3 { font-size: 1.05rem; margin: 1.8rem 0 0.6rem; font-weight: 600; }
+article.post p { margin: 0 0 1.15rem; }
+article.post blockquote {
+  margin: 1.6rem 0;
+  padding: 0.2rem 0 0.2rem 1.1rem;
+  border-left: 3px solid var(--accent);
+  color: var(--muted);
+}
+article.post ul, article.post ol { padding-left: 1.3rem; margin: 0 0 1.15rem; }
+article.post li { margin: 0.3rem 0; }
+article.post img { max-width: 100%; border-radius: 6px; }
+article.post hr { border: none; border-top: 1px solid var(--line); margin: 2.5rem 0; }
+article.post code {
+  background: var(--code-bg);
+  padding: 0.1em 0.35em;
+  border-radius: 3px;
+  font-size: 0.88em;
+  font-family: "Cascadia Code", Consolas, monospace;
+}
+article.post pre {
+  background: var(--code-bg);
+  padding: 1rem 1.1rem;
+  border-radius: 6px;
+  overflow-x: auto;
+  line-height: 1.7;
+}
+article.post pre code { background: none; padding: 0; }
+
+article.post table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  line-height: 1.7;
+}
+article.post th, article.post td {
+  border: 1px solid var(--line);
+  padding: 0.55rem 0.7rem;
+  text-align: left;
+  vertical-align: top;
+}
+article.post th { background: var(--code-bg); font-weight: 600; }
+
+.pager { display: flex; justify-content: space-between; gap: 1rem; border-top: 1px solid var(--line); margin-top: 3rem; padding-top: 1.4rem; font-size: 0.92rem; }
+.pager a { color: var(--muted); text-decoration: none; }
+.pager a:hover { color: var(--accent); }
+
+footer.site { border-top: 1px solid var(--line); margin-top: 4rem; padding: 1.6rem 0 2.4rem; color: var(--muted); font-size: 0.82rem; }
+footer.site .wrap { display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+footer.site a { color: var(--muted); }
+
+.empty { color: var(--muted); padding: 3rem 0; }
+
+@media (max-width: 520px) {
+  body { font-size: 16px; }
+  .hero h1 { font-size: 1.6rem; }
+  article.post h1 { font-size: 1.5rem; }
+}
